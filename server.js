@@ -1,6 +1,6 @@
-import http from "http";
+import app from "./src/app.js";
 
-const PORT = 3000;
+const PORT = 3001;
 
 const rotas = {
   "/": "curso de express api",
@@ -8,11 +8,6 @@ const rotas = {
   "/autores": "Entrei na rota autores"
 };
 
-const server = http.createServer((req, res) => {
-  res.writeHead(200, { "Content-Type": "text/plain" });
-  res.end(rotas[req.url]);
-});
-
-server.listen(PORT, () => {
-    console.log("Servidor rodando na porta 3000");
+app.listen(PORT, () => {
+    console.log("Servidor rodando");
 });
